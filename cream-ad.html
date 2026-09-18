@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PaycheckPilot Budget Tracker – Ad</title>
+<style>
+:root{--pg:#eef1f4;--tx:#10161d;--bt:#10161d;--bt-tx:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pg:#05070a;--tx:#f4f6f8;--bt:#2ee6a6;--bt-tx:#05070a}}
+:root[data-theme="dark"]{--pg:#05070a;--tx:#f4f6f8;--bt:#2ee6a6;--bt-tx:#05070a}
+*{box-sizing:border-box;margin:0}
+body{background:var(--pg);color:var(--tx);font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:12px}
+#stage{position:relative;overflow:hidden;background:radial-gradient(120% 80% at 50% 0%,#12301f 0%,#0b0f14 60%);color:#f4f6f8;border-radius:18px;aspect-ratio:9/16;width:min(100%,calc(92vh*9/16));container-type:inline-size}
+.sc{position:absolute;inset:0;padding:12cqw 8cqw;display:flex;flex-direction:column;justify-content:center;gap:5cqw;opacity:0;pointer-events:none;transition:opacity .4s}
+.sc.on{opacity:1;pointer-events:auto}
+h1{font-size:11cqw;line-height:1.05;font-weight:900;letter-spacing:-.02em}
+h2{font-size:8cqw;line-height:1.1;font-weight:800}
+p,.sub{font-size:4.6cqw;color:#b9c4cf;line-height:1.35}
+em{font-style:normal;color:#2ee6a6}
+.in{opacity:0;transform:translateY(4cqw)}
+.on .in{animation:up .6s var(--d,0s) forwards cubic-bezier(.2,.8,.2,1)}
+@keyframes up{to{opacity:1;transform:none}}
+.chip{display:flex;justify-content:space-between;background:#ffffff10;border:1px solid #ffffff18;border-radius:3cqw;padding:3.6cqw 4.4cqw;font-size:5cqw;font-weight:600}
+.chip b{color:#ff6b6b}
+.logo{font-size:16cqw;font-weight:900;letter-spacing:-.03em;color:#2ee6a6;line-height:1}
+.card{background:#ffffff10;border:1px solid #ffffff18;border-radius:4cqw;padding:5cqw;display:flex;flex-direction:column;gap:3.5cqw}
+.row{display:flex;justify-content:space-between;align-items:baseline;font-size:4.6cqw;color:#b9c4cf}
+.row strong{font-size:7cqw;color:#f4f6f8}
+.net strong{color:#2ee6a6;font-size:9cqw}
+.bar{display:flex;flex-direction:column;gap:1.2cqw;font-size:3.8cqw;color:#b9c4cf}
+.bar i{display:block;height:2.6cqw;border-radius:2cqw;background:#2ee6a6;width:0;transition:width 1.4s .5s cubic-bezier(.2,.8,.2,1)}
+.on .bar i{width:var(--w)}
+.ft{display:flex;gap:3cqw;align-items:center;font-size:5.2cqw;font-weight:600}
+.ft span{flex:none;width:8cqw;height:8cqw;border-radius:50%;background:#2ee6a6;color:#05130c;display:grid;place-items:center;font-size:4.6cqw}
+.cta{display:inline-block;text-decoration:none;align-self:flex-start;background:#2ee6a6;color:#05130c;font-weight:800;font-size:5.6cqw;padding:4cqw 7cqw;border-radius:99px}
+.on .pulse{animation:up .6s var(--d) forwards,pl 1.2s 1.2s infinite}
+@keyframes pl{50%{transform:scale(1.06)}}
+#prog{position:absolute;left:0;top:0;height:1.2cqw;background:#2ee6a6;width:0;z-index:5}
+#ov{position:absolute;inset:0;z-index:9;background:#05070acc;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4cqw;cursor:pointer}
+#ov button{background:var(--bt);color:var(--bt-tx);border:0;font-size:5.4cqw;font-weight:800;padding:4cqw 8cqw;border-radius:99px;cursor:pointer}
+#ov.end{background:none;pointer-events:none;justify-content:flex-end;padding-bottom:5cqw}#ov.end button{pointer-events:auto;font-size:3.8cqw;padding:2.5cqw 6cqw}#ov.end small{display:none}
+#ov small{color:#b9c4cf;font-size:3.8cqw}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="prog"></div>
+
+  <div class="sc"><h1 class="in" style="--d:.2s">Where did your <em>paycheck</em> go?</h1><p class="in" style="--d:1.3s">Paid on Friday. Broke by Tuesday.</p></div>
+
+  <div class="sc">
+    <h2 class="in" style="--d:.1s">Money leaks. You just can't <em>see</em> it.</h2>
+    <div class="chip in" style="--d:.7s"><span>🛒 Groceries</span><b>−$412</b></div>
+    <div class="chip in" style="--d:1.2s"><span>🍟 Fast food</span><b>−$186</b></div>
+    <div class="chip in" style="--d:1.7s"><span>🧾 Subscriptions</span><b>−$94</b></div>
+    <div class="chip in" style="--d:2.2s"><span>🏠 Rent</span><b>−$1,650</b></div>
+  </div>
+
+  <div class="sc" style="align-items:flex-start">
+    <div class="logo in" style="--d:.1s">Paycheck<br>Pilot</div>
+    <h2 class="in" style="--d:.8s">Give every paycheck a flight plan.</h2>
+    <p class="in" style="--d:1.6s">The budget tracker that shows every dollar.</p>
+  </div>
+
+  <div class="sc">
+    <h2 class="in" style="--d:.1s">Your whole month, <em>one screen</em>.</h2>
+    <div class="card in" style="--d:.5s">
+      <div class="row"><span>Income</span><strong data-to="4800" data-pre="$">$0</strong></div>
+      <div class="row"><span>Expenses</span><strong data-to="4215" data-pre="−$">−$0</strong></div>
+      <div class="row net"><span>Net cashflow</span><strong data-to="585" data-pre="+$">+$0</strong></div>
+    </div>
+    <div class="card in" style="--d:.9s">
+      <div class="bar"><span>Needs</span><i style="--w:72%"></i></div>
+      <div class="bar"><span>Fixed</span><i style="--w:88%"></i></div>
+      <div class="bar"><span>Fun</span><i style="--w:34%"></i></div>
+    </div>
+  </div>
+
+  <div class="sc">
+    <h2 class="in" style="--d:.1s">Everything <em>built in</em></h2>
+    <div class="ft in" style="--d:.5s"><span>✓</span>Income &amp; expense statements</div>
+    <div class="ft in" style="--d:1s"><span>✓</span>Budget vs. actual</div>
+    <div class="ft in" style="--d:1.5s"><span>✓</span>Debt snowball tracker</div>
+    <div class="ft in" style="--d:2s"><span>✓</span>Assets &amp; liabilities</div>
+    <div class="ft in" style="--d:2.5s"><span>✓</span>Fixed expense planner</div>
+  </div>
+
+  <div class="sc" style="align-items:flex-start">
+    <h1 class="in" style="--d:.1s">Take control of your <em>cash</em>.</h1>
+    <a class="cta pulse in" style="--d:.9s" href="https://docs.google.com/spreadsheets/d/12p-4gG9pTwcKaXy-IvWwK3tzx9-9w1-dN2z-1gzFaJY/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">Get the template →</a>
+    <p class="in" style="--d:1.6s">Instant download · Link in bio</p>
+  </div>
+
+  <div id="ov"><button>▶ Play ad</button><small>~26 sec · screen-record to save as video</small></div>
+</div>
+
+<script>
+const D=[3400,4700,3600,5600,5200,4200],T=D.reduce((a,b)=>a+b,0);
+const sc=[...document.querySelectorAll('.sc')],ov=document.getElementById('ov'),pr=document.getElementById('prog');
+let timers=[],raf;
+function count(el){const to=+el.dataset.to,pre=el.dataset.pre,t0=performance.now();
+  (function s(t){const p=Math.min(1,(t-t0)/1300),e=1-Math.pow(1-p,3);
+   el.textContent=pre+Math.round(to*e).toLocaleString('en-US');if(p<1)requestAnimationFrame(s)})(t0)}
+function show(i){sc.forEach((s,k)=>s.classList.toggle('on',k===i));
+  if(i===3)setTimeout(()=>sc[3].querySelectorAll('[data-to]').forEach(count),600)}
+function play(){timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf);
+  ov.style.display='none';ov.classList.remove('end');let t=0;
+  D.forEach((d,i)=>{timers.push(setTimeout(()=>show(i),t));t+=d});
+  timers.push(setTimeout(end,T));
+  const t0=performance.now();(function f(n){const p=Math.min(1,(n-t0)/T);pr.style.width=p*100+'%';if(p<1)raf=requestAnimationFrame(f)})(t0)}
+function end(){ov.querySelector('button').textContent='↻ Replay';ov.classList.add('end');ov.style.display='flex'}
+ov.onclick=e=>{if(ov.classList.contains('end')&&e.target!==ov.querySelector('button'))return;play()};
+</script>
+</body>
+</html>
